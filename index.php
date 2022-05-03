@@ -1,5 +1,12 @@
+<!DOCTYPE html>
 <html>
-    <body>
-        <?php echo "Console " . $_GET['test']; ?>
-    </body>
+<head>
+<title>Hxdro</title>
+</head>
+<body>
+
+<h1>Hxdro - Connect</h1>
+<p>Kert az otthonodban</p>
+
+</body>
 </html>
