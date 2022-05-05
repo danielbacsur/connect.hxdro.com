@@ -16,11 +16,11 @@ ADDR: <input type="text" name="addr"><br>
 
 <?php
 if(isset($_POST['connect'])){
-    $name = $_POST['name'];
-    $mail = $_POST['mail'];
-    $pass = $_POST['pass'];
-    $addr = $_POST['addr'];
-    $qry_account = "insert into accounts (account_name,account_mail,account_pass) values ('$name','$mail','$pass')";
+    $account_name = $_POST['name'];
+    $account_mail = $_POST['mail'];
+    $account_pass = $_POST['pass'];
+    $farm_addr = $_POST['addr'];
+    $qry_account = "insert into accounts (account_name,account_mail,account_pass) values ('$account_name','$account_mail','$account_pass')";
     $run_account = mysqli_query($con, $qry_account);
 
     $sel_account = "SELECT * FROM accounts WHERE account_mail='$mail'";
@@ -39,7 +39,7 @@ if(isset($_POST['connect'])){
     $id = $row_farm['account_id'];
     */
 
-    header( 'Location: http://console.hxdro.com/'.$account_id.'/'.$addr );
+    header( 'Location: http://console.hxdro.com/'.$account_id.'/69420 );
 
 } ?>
 
