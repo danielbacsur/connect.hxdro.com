@@ -37,7 +37,7 @@ if(isset($_POST['connect'])){
     $row_farm = mysqli_fetch_array($run_farm);
     $farm_id = $row_farm['farm_id'];
 
-    header( 'Location: http://console.hxdro.com/'.$account_id.'/'.$farm_id );
+    echo( 'Location: http://console.hxdro.com/'.$account_id.'/'.$farm_id );
 
 } ?>
 
