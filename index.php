@@ -27,7 +27,7 @@ if(isset($_POST['connect'])){
     $row_account = mysqli_fetch_array($run_account);
     $account_id = $row_account['account_id'];
     
-    $farm_apikey = $_GET['farm_apikey'];
+    /*$farm_apikey = $_GET['farm_apikey'];
     echo $farm_apikey;
     $farm_name = $_POST['farm_name'];
     $qry_farm = "insert into farms (farm_apikey, farm_name, farm_account) values ('$farm_apikey','$farm_name', $account_id)";
@@ -42,7 +42,7 @@ if(isset($_POST['connect'])){
 
 
     echo 'farm_id='.$farm_id;
-    echo 'farm_apikey='.$farm_apikey;
+    echo 'farm_apikey='.$farm_apikey;*/
 
     header( 'Location: http://console.hxdro.com/'.$account_id.'/69420' );
 
