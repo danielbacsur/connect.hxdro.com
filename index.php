@@ -23,7 +23,7 @@ if(isset($_POST['connect'])){
     $insert_customer = "insert into accounts (account_name,account_mail,account_pass,account_addr) values ('$name','$mail','$pass','$addr')";
     $run_customer = mysqli_query($con,$insert_customer);
 
-    $select_cart = "SELECT * FROM accounts WHERE account_mail='$account_mail'";
+    $select_cart = "SELECT * FROM accounts WHERE account_mail='$mail'";
     $run_cart = mysqli_query($con,$select_cart);
     $row_cart = mysqli_fetch_array($run_cart);
     $id = $row_cart['addount_id'];
