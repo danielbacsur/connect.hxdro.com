@@ -4,8 +4,11 @@
 <title>Hxdro</title>
 </head>
 <body>
-
+    
+    <h1>Hxdro - Connect</h1>
+    <p>Kert az otthonodban</p>
 <?php
+
 
 $con = mysqli_connect("localhost","hxdro","12345678","hxdro");
 if ($con -> connect_errno) {
