@@ -29,10 +29,9 @@ if(isset($_POST['connect'])){
     $row_account = mysqli_fetch_array($run_account);
     $account_id = $row_account['account_id'];
     
-    $farm_id = guid();
-    $farm_apikey = $_GET['farm_apikey'];
+    $farm_id = $_GET['farm_id'];
     $farm_name = $_POST['farm_name'];
-    $qry_farm = "insert into farms values ('$farm_id', '$farm_apikey', '$account_id', '$farm_name')";
+    $qry_farm = "insert into farms values ('$farm_id', '$account_id', '$farm_name')";
     $run_farm = mysqli_query($con, $qry_farm);
 
     $sel_farm = "SELECT * FROM farms WHERE farm_apikey='$farm_apikey'";
