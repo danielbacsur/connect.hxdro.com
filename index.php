@@ -26,8 +26,8 @@ if(isset($_POST['connect'])){
     $sel_account = "SELECT * FROM accounts WHERE account_mail='$mail'";
     $run_account = mysqli_query($con, $sel_account);
     $row_account = mysqli_fetch_array($run_account);
-    $id = $row_account['account_id'];
-    
+    $account_id = $row_account['account_id'];
+
     /*
     $qry_farm = "insert into farms (farm_account,farm_name) values ('$id','$mail')";
     $run_farm = mysqli_query($con, $qry_farm);
@@ -39,7 +39,7 @@ if(isset($_POST['connect'])){
     $id = $row_farm['account_id'];
     */
 
-    header( 'Location: http://console.hxdro.com/'.$id.'/'.$addr );
+    header( 'Location: http://console.hxdro.com/'.$account_id.'/'.$addr );
 
 } ?>
 
