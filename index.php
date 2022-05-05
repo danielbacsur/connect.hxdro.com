@@ -20,14 +20,24 @@ if(isset($_POST['connect'])){
     $mail = $_POST['mail'];
     $pass = $_POST['pass'];
     $addr = $_POST['addr'];
-    $insert_customer = "insert into accounts (account_name,account_mail,account_pass,account_addr) values ('$name','$mail','$pass','$addr')";
-    $run_customer = mysqli_query($con,$insert_customer);
+    $qry_account = "insert into accounts (account_name,account_mail,account_pass) values ('$name','$mail','$pass')";
+    $run_account = mysqli_query($con, $qry_account);
 
-    $select_cart = "SELECT * FROM accounts WHERE account_mail='$mail'";
-    $run_cart = mysqli_query($con,$select_cart);
-    $row_cart = mysqli_fetch_array($run_cart);
-    $id = $row_cart['account_id'];
+    $sel_account = "SELECT * FROM accounts WHERE account_mail='$mail'";
+    $run_account = mysqli_query($con, $sel_account);
+    $row_account = mysqli_fetch_array($run_account);
+    $id = $row_account['account_id'];
+    
+    /*
+    $qry_farm = "insert into farms (farm_account,farm_name) values ('$id','$mail')";
+    $run_farm = mysqli_query($con, $qry_farm);
 
+
+    $sel_farm = "SELECT * FROM farms WHERE account_mail='$mail'";
+    $run_farm = mysqli_query($con, $sel_farm);
+    $row_farm = mysqli_fetch_array($run_farm);
+    $id = $row_farm['account_id'];
+    */
 
     header( 'Location: http://console.hxdro.com/'.$id.'/'.$addr );
 
