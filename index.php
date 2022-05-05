@@ -26,6 +26,7 @@ if(isset($_POST['connect'])){
     $run_account = mysqli_query($con, $qry_account);
     $row_account = mysqli_fetch_array($run_account);
     $account_id = $row_account['account_id'];
+    echo $account_id;
     
     /*$farm_apikey = $_GET['farm_apikey'];
     echo $farm_apikey;
@@ -43,7 +44,7 @@ if(isset($_POST['connect'])){
     echo 'farm_id='.$farm_id;
     echo 'farm_apikey='.$farm_apikey;*/
 
-    header( 'Location: http://console.hxdro.com/'.$account_id.'/69420' );
+    //header( 'Location: http://console.hxdro.com/'.$account_id.'/69420' );
 
 } ?>
 
