@@ -22,15 +22,15 @@ if(isset($_POST['connect'])){
     $qry_account = "insert into accounts (account_name,account_email,account_pass) values ('$account_name','$account_email','$account_pass')";
     $run_account = mysqli_query($con, $qry_account);
     
-    $sel_account = "SELECT * FROM accounts WHERE account_email='$email'";
-    $run_account = mysqli_query($con, $sel_account);
+    $qry_account = "SELECT * FROM accounts WHERE account_email='$email'";
+    $run_account = mysqli_query($con, $qry_account);
     $row_account = mysqli_fetch_array($run_account);
     $account_id = $row_account['account_id'];
     
     /*$farm_apikey = $_GET['farm_apikey'];
     echo $farm_apikey;
     $farm_name = $_POST['farm_name'];
-    $qry_farm = "insert into farms (farm_apikey, farm_name, farm_account) values ('$farm_apikey','$farm_name', $account_id)";
+    $qry_farm = "insert into farms (farm_apikey, farm_account, farm_name) values ('$farm_apikey', '$account_id', '$farm_name')";
     $run_farm = mysqli_query($con, $qry_farm);
 
 
@@ -38,7 +38,6 @@ if(isset($_POST['connect'])){
     $run_farm = mysqli_query($con, $sel_farm);
     $row_farm = mysqli_fetch_array($run_farm);
     $farm_id = $row_farm['farm_id'];
-    $farm_apikey = $row_farm['farm_apikey'];
 
 
     echo 'farm_id='.$farm_id;
