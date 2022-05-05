@@ -15,13 +15,30 @@ if ($con -> connect_errno) {
     echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
     exit();
   }
-$insert_customer = "insert into accounts (account_name,account_mail,account_pass,account_addr) values ('admin','contact@danielbacsur.com','1234','prototype')";
-$run_customer = mysqli_query($con,$insert_customer);
 ?>
 
 
 <h1>Hxdro - Connect</h1>
 <p>Kert az otthonodban</p>
+
+<form action="" method="post">
+NAME: <input type="text" name="name"><br>
+MAIL: <input type="text" name="mail"><br>
+PASS: <input type="text" name="pass"><br>
+ADDR: <input type="text" name="addr"><br>
+<input type="submit" name="register">
+
+                                            <?php
+                                            if(isset($_POST['register'])){
+                                                    $name = $_POST['name'];
+                                                    $mail = $_POST['mail'];
+                                                    $pass = $_POST['pass'];
+                                                    $addr = $_POST['addr'];
+                                                    $insert_customer = "insert into customers (account_name,account_mail,account_pass,account_addr) values ('$name','$mail','$pass','$addr')";
+                                                    $run_customer = mysqli_query($con,$insert_customer);
+                                            }
+                                            ?>
+
 
 </body>
 </html>
