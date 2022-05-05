@@ -1,4 +1,4 @@
 RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ /index.php?farm_apik=$1 [NC,L,QSA]
+RewriteRule ^(.*)$ /index.php?farm_apikey=$1 [NC,L,QSA]
