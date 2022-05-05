@@ -9,7 +9,7 @@
     <h1>Connect</h1>
 <form action="" method="post">
 NAME: <input type="text" name="name"><br>
-MAIL: <input type="text" name="mail"><br>
+MAIL: <input type="text" name="email"><br>
 PASS: <input type="text" name="pass"><br>
 FN: <input type="text" name="farm_name"><br>
 <input type="submit" name="connect">
@@ -17,12 +17,12 @@ FN: <input type="text" name="farm_name"><br>
 <?php
 if(isset($_POST['connect'])){
     $account_name = $_POST['name'];
-    $account_mail = $_POST['mail'];
+    $account_mail = $_POST['email'];
     $account_pass = $_POST['pass'];
-    $qry_account = "insert into accounts (account_name,account_mail,account_pass) values ('$account_name','$account_mail','$account_pass')";
+    $qry_account = "insert into accounts (account_name,account_email,account_pass) values ('$account_name','$account_email','$account_pass')";
     $run_account = mysqli_query($con, $qry_account);
     
-    $sel_account = "SELECT * FROM accounts WHERE account_mail='$mail'";
+    $sel_account = "SELECT * FROM accounts WHERE account_email='$email'";
     $run_account = mysqli_query($con, $sel_account);
     $row_account = mysqli_fetch_array($run_account);
     $account_id = $row_account['account_id'];
