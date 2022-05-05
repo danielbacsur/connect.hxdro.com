@@ -26,7 +26,7 @@ if(isset($_POST['connect'])){
     $select_cart = "SELECT * FROM accounts WHERE account_mail='$mail'";
     $run_cart = mysqli_query($con,$select_cart);
     $row_cart = mysqli_fetch_array($run_cart);
-    $id = $row_cart['addount_id'];
+    $id = $row_cart['account_id'];
 
 
     header( 'Location: http://console.hxdro.com/'.$id.'/'.$addr );
