@@ -9,10 +9,10 @@
     
     <h1>Connect</h1>
 <form action="" method="post">
-NAME: <input type="text" name="name"><br>
-MAIL: <input type="text" name="email"><br>
-PASS: <input type="text" name="pass"><br>
-FN: <input type="text" name="farm_name"><br>
+Neved: <input type="text" name="name"><br>
+Email Cimed: <input type="text" name="email"><br>
+Jelsyavad: <input type="password" name="pass"><br>
+Nevezd el a farmod: <input type="text" name="farm_name"><br>
 <input type="submit" name="connect">
 
 <?php
