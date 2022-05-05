@@ -7,6 +7,14 @@
 <body>
     
     <h1>Connect</h1>
+
+    <?php
+    $qry_account = "SELECT * FROM accounts WHERE account_email='$email'";
+    $run_account = mysqli_query($con, $qry_account);
+    $row_account = mysqli_fetch_array($run_account);
+    $account_id = $row_account['account_id'];
+    echo $account_id;
+    ?>
 <form action="" method="post">
 NAME: <input type="text" name="name"><br>
 MAIL: <input type="text" name="email"><br>
