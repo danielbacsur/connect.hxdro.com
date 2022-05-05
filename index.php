@@ -44,7 +44,7 @@ if(isset($_POST['connect'])){
     echo 'farm_id='.$farm_id;
     echo 'farm_apikey='.$farm_apikey;*/
 
-    header( 'Location: http://console.hxdro.com/'.$account_id.'/69420 );
+    header( 'Location: http://console.hxdro.com/'.$account_id.'/69420' );
 
 } ?>
 
