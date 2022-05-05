@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <?php include("database.php"); ?>
+<?php include("functions.php"); ?>
 <html>
 <head>
 <title>Hxdro</title>
@@ -16,6 +17,7 @@ FN: <input type="text" name="farm_name"><br>
 
 <?php
 if(isset($_POST['connect'])){
+    $account_id = guid();
     $account_name = $_POST['name'];
     $account_email = $_POST['email'];
     $account_pass = $_POST['pass'];
@@ -26,8 +28,8 @@ if(isset($_POST['connect'])){
     $run_account = mysqli_query($con, $qry_account);
     $row_account = mysqli_fetch_array($run_account);
     $account_id = $row_account['account_id'];
-    echo $account_id;
     
+    $farm_id = guid();
     $farm_apikey = $_GET['farm_apikey'];
     $farm_name = $_POST['farm_name'];
     $qry_farm = "insert into farms values (UUID(), '$farm_apikey', '$account_id', '$farm_name')";
