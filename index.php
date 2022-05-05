@@ -24,20 +24,10 @@ if(isset($_POST['connect'])){
     $qry_account = "insert into accounts values ('$account_id', '$account_name','$account_email','$account_pass')";
     $run_account = mysqli_query($con, $qry_account);
     
-    $qry_account = "SELECT * FROM accounts WHERE account_email='$account_email'";
-    $run_account = mysqli_query($con, $qry_account);
-    $row_account = mysqli_fetch_array($run_account);
-    $account_id = $row_account['account_id'];
-    
     $farm_id = $_GET['farm_id'];
     $farm_name = $_POST['farm_name'];
     $qry_farm = "insert into farms values ('$farm_id', '$account_id', '$farm_name')";
     $run_farm = mysqli_query($con, $qry_farm);
-
-    $sel_farm = "SELECT * FROM farms WHERE farm_apikey='$farm_apikey'";
-    $run_farm = mysqli_query($con, $sel_farm);
-    $row_farm = mysqli_fetch_array($run_farm);
-    $farm_id = $row_farm['farm_id'];
 
     header( 'Location: http://console.hxdro.com/'.$account_id.'/'.$farm_id );
 
