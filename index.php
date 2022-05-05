@@ -11,7 +11,7 @@
 NAME: <input type="text" name="name"><br>
 MAIL: <input type="text" name="mail"><br>
 PASS: <input type="text" name="pass"><br>
-ADDR: <input type="text" name="addr"><br>
+FN: <input type="text" name="farm_name"><br>
 <input type="submit" name="connect">
 
 <?php
@@ -19,25 +19,30 @@ if(isset($_POST['connect'])){
     $account_name = $_POST['name'];
     $account_mail = $_POST['mail'];
     $account_pass = $_POST['pass'];
-    $farm_addr = $_POST['addr'];
     $qry_account = "insert into accounts (account_name,account_mail,account_pass) values ('$account_name','$account_mail','$account_pass')";
     $run_account = mysqli_query($con, $qry_account);
-
+    
     $sel_account = "SELECT * FROM accounts WHERE account_mail='$mail'";
     $run_account = mysqli_query($con, $sel_account);
     $row_account = mysqli_fetch_array($run_account);
     $account_id = $row_account['account_id'];
-
-    /*
-    $qry_farm = "insert into farms (farm_account,farm_name) values ('$id','$mail')";
+    
+    $farm_apikey = $_GET['farm_apikey'];
+    echo $farm_apikey;
+    $farm_name = $_POST['farm_name'];
+    $qry_farm = "insert into farms (farm_apikey, farm_name, farm_account) values ('$farm_apikey','$farm_name', $account_id)";
     $run_farm = mysqli_query($con, $qry_farm);
 
 
-    $sel_farm = "SELECT * FROM farms WHERE account_mail='$mail'";
+    $sel_farm = "SELECT * FROM farms WHERE farm_apikey='$farm_apikey'";
     $run_farm = mysqli_query($con, $sel_farm);
     $row_farm = mysqli_fetch_array($run_farm);
-    $id = $row_farm['account_id'];
-    */
+    $farm_id = $row_farm['farm_id'];
+    $farm_apikey = $row_farm['farm_apikey'];
+
+
+    echo 'farm_id='.$farm_id;
+    echo 'farm_apikey='.$farm_apikey;
 
     header( 'Location: http://console.hxdro.com/'.$account_id.'/69420 );
 
