@@ -17,7 +17,7 @@ FN: <input type="text" name="farm_name"><br>
 
 <?php
 if(isset($_POST['connect'])){
-    $account_id = guid();
+    $account_id = random_bytes(16);
     $account_name = $_POST['name'];
     $account_email = $_POST['email'];
     $account_pass = $_POST['pass'];
