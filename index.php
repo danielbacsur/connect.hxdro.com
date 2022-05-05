@@ -23,7 +23,7 @@ if(isset($_POST['connect'])){
     $insert_customer = "insert into accounts (account_name,account_mail,account_pass,account_addr) values ('$name','$mail','$pass','$addr')";
     $run_customer = mysqli_query($con,$insert_customer);
 
-    echo "<script>window.open('console.hxdro.com?$addr','_self')</script>";
+    echo "<script>window.open('http://console.hxdro.com/$addr','_self')</script>";
 } ?>
 
 </body>
