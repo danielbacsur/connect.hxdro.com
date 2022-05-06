@@ -23,16 +23,13 @@ if(isset($_POST['connect'])){
     $account_pass = $_POST['pass'];
     $qry_account = "insert into accounts values ('$account_id', '$account_name','$account_email','$account_pass')";
     $run_account = mysqli_query($con, $qry_account);
-    $_SESSION['account_id'] = $account_id;
-
     
     $farm_id = $_GET['farm_id'];
     $farm_name = $_POST['farm_name'];
     $qry_farm = "insert into farms values ('$farm_id', '$account_id', '$farm_name')";
     $run_farm = mysqli_query($con, $qry_farm);
-    $_SESSION['farm_id'] = $farm_id;
 
-    header( 'Location: http://console.hxdro.com/' );
+    header( 'Location: http://console.hxdro.com/'.$account_id.'/'.$farm_id );
 
 } ?>
 
