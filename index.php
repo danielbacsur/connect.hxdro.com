@@ -6,12 +6,6 @@
 <title>Hxdro</title>
 </head>
 <body>
-    <?php
-    $sel_account = "SELECT COUNT(*) FROM accounts";
-    $run_account = mysqli_query($hxdro, $sel_account);
-    $account_id = mysqli_fetch_array($run_account);
-    echo $account_id; 
-    echo $run_account;?>
     
     <h1>Connect</h1>
 <form action="" method="post">
@@ -25,7 +19,7 @@ Nevezd el a farmod: <input type="text" name="farm_name"><br>
 if(isset($_POST['connect'])){
     $sel_account = "SELECT * FROM accounts";
     $run_account = mysqli_query($hxdro, $sel_account);
-    $account_id = mysqli_fetch_array($run_account);
+    $account_id = mysqli_num_rows($run_account);
 
     $account_uuid = guid();
     $account_name = $_POST['name'];
