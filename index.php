@@ -20,7 +20,7 @@ if(isset($_POST['connect'])){
     $account_id = guid();
     $account_name = $_POST['name'];
     $account_email = $_POST['email'];
-    $account_pass = $_POST['pass'];
+    $account_pass = hash('sha256', $_POST['pass']);
     $qry_account = "insert into accounts values ('$account_id', '$account_name','$account_email','$account_pass')";
     $run_account = mysqli_query($con, $qry_account);
     
