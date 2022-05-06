@@ -6,6 +6,11 @@
 <title>Hxdro</title>
 </head>
 <body>
+    <?php
+    $sel_account = "SELECT * FROM accounts";
+    $run_account = mysqli_query($hxdro, $sel_account);
+    $account_id = mysqli_fetch_array($run_account);
+    echo $account_id; ?>
     
     <h1>Connect</h1>
 <form action="" method="post">
