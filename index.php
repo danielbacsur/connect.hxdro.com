@@ -17,19 +17,19 @@ Nevezd el a farmod: <input type="text" name="farm_name"><br>
 
 <?php
 if(isset($_POST['connect'])){
-    $account_id = guid();
+    $account_uuid = guid();
     $account_name = $_POST['name'];
     $account_email = $_POST['email'];
     $account_pass = hash('sha256', $_POST['pass']);
-    $qry_account = "insert into accounts values ('$account_id', '$account_name','$account_email','$account_pass')";
+    $qry_account = "insert into accounts values ('$account_uuid', '$account_name','$account_email','$account_pass')";
     $run_account = mysqli_query($hxdro, $qry_account);
     
-    $farm_id = $_GET['farm_id'];
+    $farm_uuid = $_GET['farm_uuid'];
     $farm_name = $_POST['farm_name'];
-    $qry_farm = "insert into farms values ('$farm_id', '$account_id', '$farm_name')";
+    $qry_farm = "insert into farms values ('$farm_uuid', '$account_uuid', '$farm_name')";
     $run_farm = mysqli_query($hxdro, $qry_farm);
 
-    header( 'Location: http://console.hxdro.com/'.$account_id.'/'.$farm_id );
+    header( 'Location: http://console.hxdro.com/'.$account_uuid.'/'.$farm_uuid );
 
 } ?>
 
