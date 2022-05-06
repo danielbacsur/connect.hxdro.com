@@ -30,7 +30,7 @@ if(isset($_POST['connect'])){
 
     $sel_account = "SELECT * FROM farms";
     $run_account = mysqli_query($hxdro, $sel_account);
-    $farm_id = mysqli_fetch_array($run_account);
+    $farm_id = mysqli_num_rows($run_account);
     
     $farm_uuid = $_GET['farm_uuid'];
     $farm_name = $_POST['farm_name'];
