@@ -14,6 +14,7 @@ Email Cimed: <input type="text" name="email"><br>
 Jelszavad: <input type="password" name="pass"><br>
 Nevezd el a farmod: <input type="text" name="farm_name"><br>
 <input type="submit" name="connect">
+</form>
 
 <?php
 if(isset($_POST['connect'])){
